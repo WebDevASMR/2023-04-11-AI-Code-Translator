@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    >
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
+    <title>AI Code Translator | WebDevASMR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-slate-900 flex flex-col items-center justify-center w-screen h-screen py-16 text-white font-sans">
+    <!-- header and API Key -->
+    <header>
+      <div class="flex flex-col gap-1 text-center">
+        <h1 class="text-4xl font-bold">AI Code Translator</h1>
+        <small>WebDevASMR</small>
+      </div>
+      <div class="flex flex-col gap-2 items-center w-[420px] m-8">
+        <label
+          for="api-key"
+          class="font-bold"
+        >API Key:</label>
+        <input
+          type="password"
+          name="api-key"
+          id="api-key"
+          class="p-2 rounded-lg w-full text-slate-950 text-center transition hover:bg-slate-200"
+          placeholder="Enter your API key here!"
+        >
+      </div>
+    </header>
+
+    <main class="flex flex-col items-center justify-center w-8/12 h-full">
+      <!-- input/output container -->
+      <div class="w-full h-full flex gap-x-4 mb-8">
+        <div class="flex flex-col gap-3 basis-1/2">
+          <label
+            for="input-language"
+            class="uppercase font-bold"
+          >Input:</label>
+          <select
+            name="input-language"
+            id="input-language"
+            class="py-2 px-4 rounded-lg w-full text-slate-950 transition border-r-8 border-white hover:bg-slate-200 hover:border-slate-200"
+          >
+            <!-- options will by dynamically loaded -->
+          </select>
+          <textarea
+            name="input-code"
+            id="input-code"
+            placeholder="Enter code here"
+            class="p-2 rounded-lg w-full h-full text-slate-950 resize-none font-mono"
+          ></textarea>
+        </div>
+        <div class="flex flex-col gap-3 basis-1/2">
+          <label
+            for="output-language"
+            class="uppercase font-bold"
+          >Output:</label>
+          <select
+            name="output-language"
+            id="output-language"
+            class="py-2 px-4 rounded-lg w-full text-slate-950 transition border-r-8 border-white hover:bg-slate-200 hover:border-slate-200"
+          >
+            <!-- options will by dynamically loaded -->
+          </select>
+          <textarea
+            name="output-code"
+            id="output-code"
+            placeholder="Translated code will show here when the API is complete and can be copied by clicking here"
+            class="p-2 rounded-lg w-full h-full text-slate-950 resize-none font-mono cursor-copy"
+            readonly
+          ></textarea>
+        </div>
+      </div>
+
+      <button
+        id="translate-btn"
+        class="bg-blue-600 rounded-xl
+       p-2 w-6/12 disabled:opacity-30 disabled:cursor-progress"
+      >
+        Translate Code
+      </button>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+
+</html>
